@@ -2,6 +2,14 @@
 If you've come to the realisation that you'd like to split up your DNS enumeration methodology by generating combinations and/or pulling passive data from other sources, then subgen is the sorter & concator you're probably looking for
 
 
+### Installation
+
+If you have a properly configured GOPATH and $GOPATH/bin is in your PATH, then run this command for a one-liner install, thank you golang!
+```
+go get -u github.com/pry0cc/subgen
+```
+
+
 #### Cat a very large unsorted wordlist.
 ```
 cat wordlist.txt | subgen -d "uber.com" | zdns A | jq -r "select(.data.answers[0].name) | .name" 
